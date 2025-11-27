@@ -1,0 +1,27 @@
+name: Hourly Update
+
+on:
+  schedule:
+    - cron: '0 * * * *'
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run update script
+        run: |
+          # Add your script or command to update the repository content here.
+          # For example:
+          # ./my_update_script.sh
+          # python generate_data.py
+          echo "No update script yet"
+      - name: Commit and push if there are changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          # Be more specific with what you add to avoid committing unwanted files.
+          # For example: git add my_updated_file.txt
+          git add .
+          git commit -m "Automated update" || echo "No changes to commit"
+          git push
