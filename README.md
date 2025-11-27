@@ -1,4 +1,9 @@
-# Flash-USDT-Sender
+# Flash USDT
 
-[![.github/workflows/update.yml](https://github.com/sultanafariabd/Flash-USDT-Sender/actions/workflows/update.yml/badge.svg)](https://github.com/sultanafariabd/Flash-USDT-Sender/actions/workflows/update.yml)
-[![pages-build-deployment](https://github.com/sultanafariabd/Flash-USDT-Sender/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/sultanafariabd/Flash-USDT-Sender/actions/workflows/pages/pages-build-deployment)
+Flash USDT is a fast, secure, and low-fee stablecoin on the BEP20 network. Perfect for trading, DeFi, and cross-platform integration.
+
+## Contact
+
+- **DM Me:** @RecentCoders
+- **WhatsApp:** +18208231206
+- **Telegram:** https://t.me/FlashUSDTokens
