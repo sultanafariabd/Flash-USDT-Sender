@@ -1,0 +1,12 @@
+name: Ping Website
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping flashusdtsender.xyz
+        run: curl -sS https://www.flashusdtsender.xyz/ > /dev/null
