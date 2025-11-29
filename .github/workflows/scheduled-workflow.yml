@@ -1,0 +1,18 @@
+name: Scheduled Workflow
+
+on:
+  schedule:
+    # Runs every 30 minutes
+    - cron: "*/30 * * * *"
+  workflow_dispatch: # Allows manual trigger
+
+jobs:
+  run-every-30-minutes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run script
+        run: |
+          echo "Workflow triggered at $(date)"
