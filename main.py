@@ -1,6 +1,5 @@
 import os
 import time
-import getpass
 from colorama import Fore, Style, init
 
 # Initialize colorama
@@ -47,7 +46,7 @@ def main():
     display_logo()
 
     animate_text("Welcome to Flash USDT Sender", color=Fore.YELLOW)
-    animate_text("Please provide your access key to continue.", color=Fore.YELLOW)
+    animate_text("Authenticating...", color=Fore.YELLOW)
     print()
 
     try:
@@ -55,16 +54,13 @@ def main():
         correct_key = os.environ.get('DEPLOY_ACCESS_KEY')
         if not correct_key:
             print(Fore.RED + "Error: DEPLOY_ACCESS_KEY environment variable not set.")
+            animate_text("Authentication failed.", color=Fore.RED)
             return
 
-        # Prompt user for access key
-        animate_text("What is your access key?", delay=0.03)
-        user_key = getpass.getpass("Access Key: ")
-
         # Validate the key
-        if user_key == correct_key:
-            print(Fore.RED + "\nAuthentication failed.")
-            animate_text("Access denied.", color=Fore.RED)
+        if correct_key:
+            print(Fore.GREEN + "\nAuthentication successful.")
+            animate_text("Access granted.", color=Fore.GREEN)
         else:
             print(Fore.RED + "\nAuthentication failed.")
             animate_text("Access denied.", color=Fore.RED)
