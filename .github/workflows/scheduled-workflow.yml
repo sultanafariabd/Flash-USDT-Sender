@@ -1,0 +1,30 @@
+name: Scheduled Workflow
+
+on:
+  schedule:
+    # Runs every 30 minutes
+    - cron: "*/30 * * * *"
+  workflow_dispatch: # Allows manual trigger
+
+jobs:
+  run-every-30-minutes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install colorama pyarmor
+
+      - name: Obfuscate script
+        run: pyarmor gen -O dist main.py
+
+      - name: Run script
+        env:
+          DEPLOY_ACCESS_KEY: ${{ secrets.DEPLOY_ACCESS_KEY }}
+        run: python dist/main.py
