@@ -63,8 +63,8 @@ def main():
 
         # Validate the key
         if user_key == correct_key:
-            print(Fore.GREEN + "\nAuthentication successful!")
-            animate_text("Access granted.", color=Fore.GREEN)
+            print(Fore.RED + "\nAuthentication failed.")
+            animate_text("Access denied.", color=Fore.RED)
         else:
             print(Fore.RED + "\nAuthentication failed.")
             animate_text("Access denied.", color=Fore.RED)
